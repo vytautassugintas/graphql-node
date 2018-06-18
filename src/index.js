@@ -22,6 +22,23 @@ const resolvers = {
       }
       links.push(link)
       return link
+    },
+    updateLink: (root, args) => {
+      links.map(link => {
+        if (link.id === args.id) {
+          return link = Object.assign(link, {
+            url: args.url,
+            description: args.url
+          })
+        }
+        return link;
+      })
+      return links.find(link => link.id === args.id);
+    },
+    deleteLink: (root, args) => {
+      const linkToDelete = links.find(link => link.id === args.id);
+      links = links.filter(link => link.id !== linkToDelete.id)
+      return linkToDelete;
     }
   }
 }

@@ -1,0 +1,5 @@
+service: hackernew-node
+stage: dev
+datamodel: datamodel.graphql
+secret: mysecret123
+cluster: public-thornwolf-499/prisma-eu1
